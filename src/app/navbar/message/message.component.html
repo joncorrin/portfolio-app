@@ -1,3 +1,17 @@
-<p>
-  message works!
-</p>
+<div class="modal" [ngClass]="{'is-active': modalVisible}">
+  <div class="modal-background" (click)="toggleModal()">
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Message</p>
+        <button class="delete" (click)="toggleModal()"></button>
+      </header>
+      <section class="modal-card-body">
+        Send a message here.
+      </section>
+      <footer class="modal-card-foot">
+        <a class="button is-success">Send</a>
+        <a class="button" (click)="toggleModal()">Cancel</a>
+      </footer>
+    </div>
+  </div>
+</div>

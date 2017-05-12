@@ -1,3 +1,27 @@
-<p>
-  profile-card works!
-</p>
+<div class="card">
+  <div class="card-image">
+    <figure class="image is-96x96">
+      <img [src]="profileImgUrl" alt="Admin profile photo">
+    </figure>
+  </div>
+  <div class="media">
+    <div class="media-content">
+      <p class="title is-4">{{ adminName }}</p>
+      <p class="subtitle is-6">{{ adminBio }}</p>
+    </div>
+  </div>
+  <hr>
+  <nav class="level is-mobile">
+    <div class="level-item has-text-centered">
+      <p class="title">5 </p>
+      <p class="heading">Projects</p>
+    </div>
+  </nav>
+  <hr>
+  <nav class="level is-mobile">
+    <div class="level-item has-text-centered">
+      <p class="title">15 </p>
+      <p class="heading">Posts</p>
+    </div>
+  </nav>
+</div>

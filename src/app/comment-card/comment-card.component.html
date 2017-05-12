@@ -1,3 +1,49 @@
-<p>
-  comment-card works!
-</p>
+<div class="box">
+  <article class="media">
+    <div class="media-content">
+      <div class="field">
+        <p class="control">
+          <textarea name="commentField"
+                    id="commentField"
+                    class="textarea"
+                    placeholder="Add a comment .."></textarea>
+        </p>
+          <div class="columns is-mobile">
+            <div class="column is-offset-7 is-3">
+                <a class="button is-info is-small">Submit</a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </article>
+  <hr>
+
+  <article class="media">
+    <figure class="media-left">
+      <p class="image is-48x48">
+        <img [src]="profileImgUrl" alt="Admin profile photo">
+      </p>
+    </figure>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>{{ adminName }}</strong> • <small>15h</small>
+          <br>
+          Feel free to leave a comment. Thanks for visiting!
+          <br>
+          <a>
+            <span class="icon is-small"><i class="fa fa-chevron-up"
+                                           (click)="upVote()"
+                                           [ngStyle]="{color : vote ? '#1e5799' : '#24292E'}" ></i></span>
+          </a>
+          <a>
+            <span class="icon is-small"><i class="fa fa-chevron-down"
+                                           (click)="downVote()"
+                                           [ngStyle]="{color : vote===false ? '#1e5799' : '#24292E'}"  ></i></span>
+          </a><small>+5</small>
+        </p>
+      </div>
+    </div>
+  </article>
+  <hr>
+</div>

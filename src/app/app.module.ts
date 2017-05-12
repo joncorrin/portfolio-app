@@ -12,6 +12,10 @@ import { MessageComponent } from './navbar/message/message.component';
 import { JobLeadComponent } from './navbar/job-lead/job-lead.component';
 import { ContactComponent } from './navbar/contact/contact.component';
 import { FeedbackComponent } from './navbar/feedback/feedback.component';
+import {ModalService} from "./modal.service";
+import {AppRoutingModule} from "./app-routing.module";
+import { PostFormComponent } from './post/post-form/post-form.component';
+import { PostModalComponent } from './post/post-modal/post-modal.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +27,16 @@ import { FeedbackComponent } from './navbar/feedback/feedback.component';
     MessageComponent,
     JobLeadComponent,
     ContactComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    PostFormComponent,
+    PostModalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
   ],
-  providers: [],
+  providers: [ModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

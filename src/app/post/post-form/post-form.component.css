@@ -1,0 +1,26 @@
+.theme {
+  background-color: #1e5799!important;
+}
+
+.box {
+  max-width: 542px;
+  margin: 33px 0;
+}
+
+#post-form-text {
+  border: none;
+  box-shadow: none;
+  min-height: 50px;
+  -webkit-transition: min-height 500ms!important;
+  transition: min-height 500ms!important;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.5);
+}
+
+#post-form-text:focus {
+  min-height: 120px!important;
+}
+
+hr {
+  max-width: 542px!important;
+}
+

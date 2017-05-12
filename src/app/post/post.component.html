@@ -1,3 +1,39 @@
-<p>
-  post works!
-</p>
+<div class="box">
+  <article class="media">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img [src]="profileImgUrl" alt="Admin Profile Photo">
+      </p>
+    </figure>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>{{ adminName }}</strong><br>
+          <small>{{ adminBio }}</small> •
+          <small>15h</small><br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros,
+          eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+        </p>
+          <hr>
+          <div class="columns">
+            <div class="column is-mobile is-5">
+              <small>Likes</small> • <small>Comments</small>
+            </div>
+            <div class="column is-mobile is-offset-5 is-2">
+              <a>
+                <span class="icon is-small"><i class="fa fa-reply"></i></span>
+              </a>
+              <a>
+                <span class="icon is-small"><i class="fa fa-hand-o-up fa-inverse"
+                                               (click)="toggleLike()"
+                                               [ngStyle]="{color : liked ? '#1e5799' : '#24292E'}"></i></span>
+              </a>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="media-right">
+      <button class="delete"></button>
+    </div>
+  </article>
+</div>

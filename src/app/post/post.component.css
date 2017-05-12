@@ -1,0 +1,14 @@
+.box {
+  max-width: 542px;
+}
+
+img {
+  border-radius: 50%;
+}
+
+.fa-reply {
+  color: rgba(36, 41, 46, 0.5);
+}
+.fa-reply:focus {
+  color: rgba(36, 41, 46, 1);
+}

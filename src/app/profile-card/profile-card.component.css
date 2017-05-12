@@ -1,0 +1,36 @@
+.card {
+  max-height: 430px;
+  height: 100%;
+  max-width: 216px;
+  width: 100%;
+  margin: 33px 0 0 32px;
+}
+.media {
+  padding: 0 12px 0 12px;
+}
+.title {
+  margin-top: 10px;
+}
+
+.media-content {
+  text-align: center;
+}
+
+.card-image {
+  padding: 6px 0 6px 0;
+}
+
+.card-image img {
+  border-radius: 50%;
+}
+.card-image {
+  background-color: inherit;
+  background-image: url("https://s-media-cache-ak0.pinimg.com/736x/dc/9d/b4/dc9db40a92c586ab46236cf6d66aa230.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.image {
+  margin: auto;
+  display: block;
+}
+

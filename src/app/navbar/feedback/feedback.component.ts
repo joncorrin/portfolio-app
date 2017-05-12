@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, DoCheck, OnInit} from '@angular/core';
+import {ModalService} from "../../modal.service";
 
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.component.html',
   styleUrls: ['./feedback.component.css']
 })
-export class FeedbackComponent implements OnInit {
+export class FeedbackComponent implements OnInit, DoCheck {
+  modalVisible = false;
 
-  constructor() { }
+  constructor(public modalService: ModalService) { }
 
   ngOnInit() {
+  }
+
+  ngDoCheck() {
+    this.modalVisible = this.modalService.feedbackModal;
+  }
+
+  toggleModal() {
+    this.modalVisible = this.modalService.getFeedbackModal();
   }
 
 }
