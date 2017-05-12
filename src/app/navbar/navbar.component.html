@@ -1,1 +1,31 @@
+<!-- Navbar -->
+<nav class="nav theme">
 
+  <!--Left side of nav -->
+  <div class="nav-left">
+    <a class="fa fa-circle nav-item"></a>
+  </div>
+
+  <!-- Nav center -->
+  <div class="nav-center" style="border-right:medium #ffffff solid">
+    <a href="https://www.facebook.com/jonathan.corrin" id="facebook" target="_blank" class="fa fa-facebook-square nav-item">Facebook</a>
+    <a href="https://www.linkedin.com/in/jonathancorrin" id="linkedin" target="_blank" class="fa fa-linkedin-square nav-item">Linkedin</a>
+    <a href="https://github.com/joncorrin/portfolio-app" id="github" target="_blank" class="fa fa-github nav-item">Source code</a>
+  </div>
+
+  <!--Nav mobile toggler-->
+  <span class="nav-toggle" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+
+  <!-- Nav menu/hidden on mobile-->
+  <div class="nav-right nav-menu" [ngClass]="{'is-active' : menuToggler}">
+    <a class="fa fa-home nav-item dropDownLink">Home</a>
+    <a class="fa fa-envelope-o nav-item dropDownLink">Message</a>
+    <a class="fa fa-send-o nav-item dropDownLink">Job lead</a>
+    <a class="fa fa-address-card-o nav-item dropDownLink">Contact</a>
+    <a class="fa fa-question-circle-o nav-item dropDownLink">Feedback</a>
+  </div>
+</nav>

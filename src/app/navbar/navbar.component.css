@@ -1,0 +1,27 @@
+.theme {
+  background-color: rgba(150, 150, 150, 1) !important;
+}
+
+#facebook:hover {
+  color: #3B5998!important;
+}
+#github:hover {
+  color: #24292E!important;
+}
+#linkedin:hover {
+  color: #0077B5!important;
+}
+
+a {
+  color: #ffffff!important;
+}
+
+a:hover {
+  color: #1e5799!important;
+}
+
+@media (max-width: 768px) {
+  .dropDownLink {
+    color: rgba(150, 150, 150, 1) !important;
+  }
+}
