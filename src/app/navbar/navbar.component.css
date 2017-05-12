@@ -20,8 +20,19 @@ a:hover {
   color: #1e5799!important;
 }
 
+.is-active {
+  color: #1e5799!important;
+}
+
+.is-tab {
+  border-bottom: 3px solid #1e5799!important;
+}
+
 @media (max-width: 768px) {
   .dropDownLink {
     color: rgba(150, 150, 150, 1) !important;
+  }
+  .is-active {
+    color: #1e5799!important;
   }
 }
