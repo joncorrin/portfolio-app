@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 export  class PostService {
   private posts: Post[] = [];
   postIsEdited = new EventEmitter<Post>();
-  productionUrl = 'http://portfoli-o.herokuapp.com';
+  productionUrl = 'https://portfoli-o.herokuapp.com';
 
   constructor(private http: Http) {};
 
@@ -31,7 +31,7 @@ export  class PostService {
         const posts = response.json().obj;
         let transformedPosts: Post[] = [];
         for (let adminPost of posts) {
-          transformedPosts.push(new Post(adminPost.content, adminPost.date))
+          transformedPosts.push( new Post(adminPost.content, adminPost.date));
         }
         this.posts = transformedPosts;
         return transformedPosts;

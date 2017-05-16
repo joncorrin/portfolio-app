@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {EmailTransporterService} from "../../email-transport.service";
-import {Email} from "../../email.model";
+import {EmailTransporterService} from "../../email/email-transport.service";
+import {Email} from "../../email/email.model";
 import {NgForm} from "@angular/forms";
 import {ModalService} from "../../../modal.service";
 

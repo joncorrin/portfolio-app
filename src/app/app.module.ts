@@ -18,7 +18,7 @@ import { PostFormComponent } from './posts/post-form/post-form.component';
 import { PostModalComponent } from './posts/post-modal/post-modal.component';
 import {PostService} from "./posts/post.service";
 import {CommentService} from "./comment-card/comment.service";
-import {EmailTransporterService} from "./navbar/email-transport.service";
+import {EmailTransporterService} from "./navbar/email/email-transport.service";
 import { MessageFormComponent } from './navbar/message/message-form/message-form.component';
 import { JobLeadFormComponent } from './navbar/job-lead/job-lead-form/job-lead-form.component';
 import { FeedbackFormComponent } from './navbar/feedback/feedback-form/feedback-form.component';

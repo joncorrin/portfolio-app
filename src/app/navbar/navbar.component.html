@@ -24,7 +24,7 @@
   </div>
 
   <!--Nav mobile toggler-->
-  <span class="nav-toggle" (click)="toggleMenu()">
+  <span class="nav-toggle" style="color: white" (click)="toggleMenu()">
     <span></span>
     <span></span>
     <span></span>
@@ -32,7 +32,7 @@
 
   <!-- Nav menu/hidden on mobile-->
   <div class="nav-right nav-menu" [ngClass]="{'is-active' : menuToggler}">
-    <a class="fa fa-home is-tab is-active nav-item dropDownLink">Home</a>
+    <a class="fa fa-home nav-item dropDownLink">Home</a>
     <a class="fa fa-envelope-o nav-item dropDownLink"
        (click)="modalService.toggleMessageModal()">Message</a>
     <a class="fa fa-send-o nav-item dropDownLink"
