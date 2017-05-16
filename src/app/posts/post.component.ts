@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {PostService} from "./post.service";
 import {Post} from "./post.model";
 
@@ -20,7 +20,7 @@ export class PostComponent implements OnInit {
   ngOnInit() {
     this.postService.getPosts()
       .subscribe(
-        (posts: Post[]) =>{
+        (posts: Post[]) => {
           this.posts = posts;
         }
       );
@@ -28,6 +28,13 @@ export class PostComponent implements OnInit {
 
   onEdit() {
     this.postService.editPost(this.adminPost);
+  }
+
+  onDelete() {
+    this.postService.deletePost(this.adminPost)
+      .subscribe(
+        result => console.log(result)
+      );
   }
 
   toggleLike() {

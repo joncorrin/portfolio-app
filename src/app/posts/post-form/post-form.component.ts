@@ -22,15 +22,24 @@ export class PostFormComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
-    this.content = form.value.content;
-    this.date = new Date();
-    this.adminPost = new Post(this.content, this.date);
-    console.log(this.content + ' ' + this.date + ' ' + this.adminPost);
-    this.postService.addPost(this.adminPost)
-      .subscribe(
-        data => console.log(data),
-        error => console.error(error)
-      );
+    if (this.adminPost) {
+      this.content = form.value.content;
+      this.date = new Date();
+      this.adminPost = new Post(this.content, this.date);
+      console.log(this.content + ' ' + this.date + ' ' + this.adminPost);
+      this.postService.addPost(this.adminPost)
+        .subscribe(
+          data => console.log(data),
+          error => console.error(error)
+        );
+    } else {
+      const adminPost = new Post(this.content, this.date);
+      this.postService.addPost(adminPost)
+        .subscribe(
+          data => console.log(data),
+          error => console.error(error)
+        );
+    }
     form.resetForm();
     this.clearForm(form);
   }

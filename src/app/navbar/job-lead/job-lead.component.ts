@@ -18,7 +18,4 @@ export class JobLeadComponent implements OnInit, DoCheck {
     this.modalVisible = this.modalService.jobLeadModal;
   }
 
-  toggleModal() {
-    this.modalVisible = this.modalService.getJobLeadModal();
-  }
 }

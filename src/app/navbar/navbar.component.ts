@@ -33,20 +33,4 @@ export class NavbarComponent implements OnInit, DoCheck {
     this.menuToggler = !this.menuToggler;
   }
 
-  //Gets true or false value from ModalService to toggle modals by link click
-  openMessageModal() {
-    this.messageModalVisible = this.modalService.getMessageModal();
-  }
-  openJobLeadModal() {
-    this.jobLeadModalVisible = this.modalService.getJobLeadModal();
-  }
-  openContactModal() {
-    this.contactModalVisible = this.modalService.getContactModal();
-  }
-  openFeedbackModal() {
-    this.feedbackModalVisible = this.modalService.getFeedbackModal();
-  }
-
-
-
 }

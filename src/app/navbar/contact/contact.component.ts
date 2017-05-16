@@ -17,9 +17,4 @@ export class ContactComponent implements OnInit, DoCheck {
   ngDoCheck() {
     this.modalVisible = this.modalService.contactModal;
   }
-
-  toggleModal() {
-    this.modalVisible = this.modalService.getContactModal();
-  }
-
 }

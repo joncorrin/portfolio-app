@@ -19,9 +19,5 @@ export class MessageComponent implements OnInit, DoCheck {
   ngDoCheck() {
    this.modalVisible = this.modalService.messageModal;
   }
-  //Closes modal by taking false value
-  toggleModal() {
-    this.modalVisible = this.modalService.getMessageModal();
-  }
 
 }

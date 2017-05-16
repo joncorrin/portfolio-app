@@ -1,0 +1,67 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="field">
+    <label class="label">Name</label>
+    <p class="control">
+      <input
+        type="text"
+        name="name"
+        class="input"
+        ngModel>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label">Email</label>
+    <p class="control has-icons-left">
+      <input
+        type="text"
+        name="visitorEmail"
+        class="input"
+        ngModel>
+      <span class="icon is-small is-left">
+        <i class="fa fa-envelope"></i>
+      </span>
+    </p>
+  </div>
+  <div class="field">
+    <p>Type of feedback: <br></p>
+    <p class="control">
+      <label class="radio">
+        <input type="radio"
+               value="Positive"
+               name="connotation"
+               ngModel> Positive
+      </label>
+      <label class="radio">
+        <input type="radio"
+               name="connotation"
+               value="Constructive"
+               ngModel> Constructive
+      </label>
+      <label class="radio">
+        <input type="radio"
+               name="connotation"
+               value="Negative"
+               ngModel> Negative
+      </label>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label">Feedback</label>
+    <p class="control">
+      <textarea
+        name="feedback"
+        class="textarea"
+        required
+        ngModel
+        #feedbackT="ngModel"></textarea>
+    </p>
+  </div>
+  <div class="field is-grouped">
+    <p class="control">
+      <button type="submit" class="button is-primary" (click)="onRedirect()" [disabled]="feedbackT.errors">Submit</button>
+    </p>
+    <p class="control">
+      <button type="button" class="button is-danger" (click)="clearForm(f)">Clear</button>
+    </p>
+  </div>
+</form>

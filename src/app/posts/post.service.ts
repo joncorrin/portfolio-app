@@ -8,18 +8,20 @@ import {Observable} from "rxjs";
 export  class PostService {
   private posts: Post[] = [];
   postIsEdited = new EventEmitter<Post>();
-  editing = false;
   productionUrl = 'http://portfoli-o.herokuapp.com';
 
   constructor(private http: Http) {};
 
   addPost(adminPost: Post) {
-    console.log(adminPost.content + ' ' + adminPost.date + ' From service');
-    this.posts.push(adminPost);
     const body = JSON.stringify(adminPost);
     const headers = new Headers({'Content-Type': 'application/json'});
-    return this.http.post('http://localhost:8080/post', body, { headers: headers })
-      .map((response: Response) => response.json())
+    return this.http.post(this.productionUrl + '/post', body, { headers: headers })
+      .map((response: Response) => {
+        const result = response.json();
+        const adminPost = new Post(result.obj.content, result.obj.date);
+        this.posts.push(adminPost);
+        return adminPost;
+      })
       .catch((error: Response) => Observable.throw(error.json()));
   }
 
@@ -39,15 +41,21 @@ export  class PostService {
   }
 
   editPost(adminPost: Post) {
-    this.editing = true;
     this.postIsEdited.emit(adminPost);
   }
 
   updatePost(adminPost: Post) {
-
+    const body = JSON.stringify(adminPost);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    return this.http.patch(this.productionUrl + '/post', body, {headers: headers})
+      .map((response: Response) => response.json())
+      .catch((error: Response) => Observable.throw(error.json()));
   }
 
-  deletePost(post: Post) {
-
+  deletePost(adminPost: Post) {
+    this.posts.splice(this.posts.indexOf(adminPost), 1);
+    return this.http.delete(this.productionUrl + '/post')
+      .map((response: Response) => response.json())
+      .catch((error: Response) => Observable.throw(error.json()));
   }
 }

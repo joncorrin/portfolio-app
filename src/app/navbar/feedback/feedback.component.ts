@@ -18,8 +18,4 @@ export class FeedbackComponent implements OnInit, DoCheck {
     this.modalVisible = this.modalService.feedbackModal;
   }
 
-  toggleModal() {
-    this.modalVisible = this.modalService.getFeedbackModal();
-  }
-
 }

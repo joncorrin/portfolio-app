@@ -12,21 +12,17 @@ export class ModalService {
   constructor() {}
 
   //Sends modal visible boolean to each modal component and nav
-  getMessageModal() {
+  toggleMessageModal() {
     this.messageModal = !this.messageModal;
-    return this.messageModal;
   }
-  getJobLeadModal() {
+  toggleLeadModal() {
     this.jobLeadModal = !this.jobLeadModal;
-    return this.jobLeadModal;
   }
-  getFeedbackModal() {
+  toggleFeedbackModal() {
     this.feedbackModal = !this.feedbackModal;
-    return this.feedbackModal;
   }
-  getContactModal() {
+  toggleContactModal() {
     this.contactModal = !this.contactModal;
-    return this.contactModal;
   }
 
 }

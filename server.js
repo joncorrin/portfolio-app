@@ -9,6 +9,7 @@ const userRoutes = require('./routes/users');
 const postRoutes = require('./routes/posts');
 const messageRoutes = require('./routes/messages');
 const commentRoutes = require('./routes/comments');
+const mailRoutes = require('./routes/mail');
 
 
 const app = express();
@@ -42,6 +43,7 @@ app.use(function (req,res,next) {
 
 });
 
+app.use('/mail', mailRoutes);
 app.use('/message', messageRoutes);
 app.use('/user', userRoutes);
 app.use('/comment', commentRoutes);

@@ -34,13 +34,13 @@
   <div class="nav-right nav-menu" [ngClass]="{'is-active' : menuToggler}">
     <a class="fa fa-home is-tab is-active nav-item dropDownLink">Home</a>
     <a class="fa fa-envelope-o nav-item dropDownLink"
-       (click)="openMessageModal()">Message</a>
+       (click)="modalService.toggleMessageModal()">Message</a>
     <a class="fa fa-send-o nav-item dropDownLink"
-       (click)="openJobLeadModal()">Job lead</a>
+       (click)="modalService.toggleLeadModal()">Job lead</a>
     <a class="fa fa-address-card-o nav-item dropDownLink"
-       (click)="openContactModal()">Contact</a>
+       (click)="modalService.toggleContactModal()">Contact</a>
     <a class="fa fa-question-circle-o nav-item dropDownLink"
-       (click)="openFeedbackModal()">Feedback</a>
+       (click)="modalService.toggleFeedbackModal()">Feedback</a>
   </div>
 </nav>
 
