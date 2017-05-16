@@ -1,8 +1,10 @@
+
 .box {
   height: 500px;
   max-width: 300px;
   width: 100%;
   margin: 33px 32px 0 0;
+  overflow: scroll!important;
 }
 #commentField {
   border: none;
@@ -31,4 +33,10 @@ img {
 
 #commentField:focus {
   min-height: 90px!important;
+}
+
+@media (max-width: 976px) {
+  .box {
+    display: none!important;
+  }
 }

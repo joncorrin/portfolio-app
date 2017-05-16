@@ -1,24 +1,28 @@
 <div class="box">
   <article class="media">
     <div class="media-content">
-      <div class="field">
-        <p class="control">
-          <textarea name="commentField"
-                    id="commentField"
-                    class="textarea"
-                    placeholder="Add a comment .."></textarea>
-        </p>
-          <div class="columns is-mobile">
-            <div class="column is-offset-7 is-3">
-                <a class="button is-info is-small">Submit</a>
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="field">
+          <p class="control">
+            <textarea name="content"
+                      id="commentField"
+                      class="textarea"
+                      placeholder="Add a comment .."
+                      ngModel
+                      required></textarea>
+          </p>
+            <div class="columns is-mobile">
+              <div class="column is-offset-7 is-3">
+                  <button type="submit" class="button is-info is-small">Submit</button>
+              </div>
             </div>
-          </div>
-      </div>
+        </div>
+      </form>
     </div>
   </article>
   <hr>
 
-  <article class="media">
+  <article class="media" *ngFor="let comment of comments">
     <figure class="media-left">
       <p class="image is-48x48">
         <img [src]="profileImgUrl" alt="Admin profile photo">
@@ -29,7 +33,7 @@
         <p>
           <strong>{{ adminName }}</strong> • <small>15h</small>
           <br>
-          Feel free to leave a comment. Thanks for visiting!
+          {{ comment.content }}
           <br>
           <a>
             <span class="icon is-small"><i class="fa fa-chevron-up"

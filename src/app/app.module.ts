@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
-import { PostComponent } from './post/post.component';
+import { PostComponent } from './posts/post.component';
 import { CommentCardComponent } from './comment-card/comment-card.component';
 import { MessageComponent } from './navbar/message/message.component';
 import { JobLeadComponent } from './navbar/job-lead/job-lead.component';
@@ -14,8 +14,10 @@ import { ContactComponent } from './navbar/contact/contact.component';
 import { FeedbackComponent } from './navbar/feedback/feedback.component';
 import {ModalService} from "./modal.service";
 import {AppRoutingModule} from "./app-routing.module";
-import { PostFormComponent } from './post/post-form/post-form.component';
-import { PostModalComponent } from './post/post-modal/post-modal.component';
+import { PostFormComponent } from './posts/post-form/post-form.component';
+import { PostModalComponent } from './posts/post-modal/post-modal.component';
+import {PostService} from "./posts/post.service";
+import {CommentService} from "./comment-card/comment.service";
 
 @NgModule({
   declarations: [
@@ -36,7 +38,11 @@ import { PostModalComponent } from './post/post-modal/post-modal.component';
     FormsModule,
     HttpModule,
   ],
-  providers: [ModalService],
+  providers: [
+    ModalService,
+    PostService,
+    CommentService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

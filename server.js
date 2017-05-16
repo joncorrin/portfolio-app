@@ -5,12 +5,17 @@ const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 
 const appRoutes = require('./routes/app');
+const userRoutes = require('./routes/users');
+const postRoutes = require('./routes/posts');
+const messageRoutes = require('./routes/messages');
+const commentRoutes = require('./routes/comments');
+
 
 const app = express();
 const uristring =
   process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
-  'mongodb://localhost/db';
+  'localhost:27017/portfolio';
 
 mongoose.connect(uristring, function (err, res) {
   if (err) {
@@ -37,6 +42,10 @@ app.use(function (req,res,next) {
 
 });
 
+app.use('/message', messageRoutes);
+app.use('/user', userRoutes);
+app.use('/comment', commentRoutes);
+app.use('/post', postRoutes);
 app.use('/', appRoutes);
 
 //catch 404 and forward error handler

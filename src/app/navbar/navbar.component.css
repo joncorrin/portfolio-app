@@ -39,4 +39,10 @@ a:hover {
   .is-active {
     color: #1e5799!important;
   }
+  .control.has-icons-left {
+    display: none!important;
+  }
+  .nav-center {
+    display: none!important;
+  }
 }

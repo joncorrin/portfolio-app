@@ -34,3 +34,9 @@
   display: block;
 }
 
+@media (max-width: 976px) {
+  .card {
+    display: none!important;
+  }
+}
+

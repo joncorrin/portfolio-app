@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PostService} from "./post.service";
+import {Post} from "./post.model";
 
 @Component({
   selector: 'app-post',
@@ -10,10 +12,22 @@ export class PostComponent implements OnInit {
   adminName = 'Jon Corrin';
   adminBio = 'Full stack developer looking for full-time positions';
   liked = false;
+  posts: Post[];
+  adminPost: Post;
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
   ngOnInit() {
+    this.postService.getPosts()
+      .subscribe(
+        (posts: Post[]) =>{
+          this.posts = posts;
+        }
+      );
+  }
+
+  onEdit() {
+    this.postService.editPost(this.adminPost);
   }
 
   toggleLike() {
