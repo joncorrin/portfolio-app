@@ -18,7 +18,7 @@ export  class PostService {
     return this.http.post(this.productionUrl + '/post', body, { headers: headers })
       .map((response: Response) => {
         const result = response.json();
-        const adminPost = new Post(result.obj.content, result.obj.date);
+        const adminPost = new Post(result.obj.content, result.obj.date, result.obj._id);
         this.posts.push(adminPost);
         return adminPost;
       })
@@ -31,7 +31,7 @@ export  class PostService {
         const posts = response.json().obj;
         let transformedPosts: Post[] = [];
         for (let adminPost of posts) {
-          transformedPosts.push( new Post(adminPost.content, adminPost.date));
+          transformedPosts.push( new Post(adminPost.content, adminPost.date, adminPost._id));
         }
         this.posts = transformedPosts;
         return transformedPosts;
@@ -47,14 +47,14 @@ export  class PostService {
   updatePost(adminPost: Post) {
     const body = JSON.stringify(adminPost);
     const headers = new Headers({'Content-Type': 'application/json'});
-    return this.http.patch(this.productionUrl + '/post', body, {headers: headers})
+    return this.http.patch(this.productionUrl + '/post/' + adminPost.postId, body, {headers: headers})
       .map((response: Response) => response.json())
       .catch((error: Response) => Observable.throw(error.json()));
   }
 
   deletePost(adminPost: Post) {
     this.posts.splice(this.posts.indexOf(adminPost), 1);
-    return this.http.delete(this.productionUrl + '/post')
+    return this.http.delete(this.productionUrl + '/post/' + adminPost.postId)
       .map((response: Response) => response.json())
       .catch((error: Response) => Observable.throw(error.json()));
   }
